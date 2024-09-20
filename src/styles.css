@@ -37,10 +37,12 @@ h2 {
 .grid {
   width: 600px;
   height: 400px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   flex-wrap: wrap;
   margin: 0 auto;
-  /*cursor: url('./assets/mallet.png'), pointer;*/
+  /* cursor: url('./assets/mallet.png'), pointer; */
 }
 
 .hole {
