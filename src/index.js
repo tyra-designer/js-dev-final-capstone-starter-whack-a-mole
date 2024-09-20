@@ -107,6 +107,13 @@ function chooseHole(holes) {
 */
 function gameOver() {
   // TODO: Write your code here
+  if (time > 0) {
+    let timeoutID = showUp();
+    return timeoutID;
+  } else {
+    let gameStopped = stopGame();
+    return gameStopped;
+  }
   
 }
 
@@ -265,8 +272,8 @@ function stopGame(){
 *
 */
 function startGame(){
-  //setDuration(10);
-  //showUp();
+  setDuration(10);
+  showUp();
   return "game started";
 }
 
