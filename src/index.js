@@ -175,7 +175,11 @@ function toggleVisibility(hole){
 */
 function updateScore() {
   // TODO: Write your code here
-
+  //Increment the points global variable by 1 point
+  //Update score.textContent with points
+  //return points
+  points++;
+  score.textContent = points;
   return points;
 }
 
@@ -188,8 +192,11 @@ function updateScore() {
 */
 function clearScore() {
   // TODO: Write your code here
-  // points = 0;
-  // score.textContent = points;
+  //set the points global variable to 0;
+  //update score.textContent
+  //return points
+  points = 0;
+  score.textContent = points;
   return points;
 }
 
@@ -228,6 +235,7 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
+  updateScore(event);
   return points;
 }
 
@@ -238,7 +246,10 @@ function whack(event) {
 */
 function setEventListeners(){
   // TODO: Write your code here
-
+  //forEach mole add the whack event handler when a player clicks on the mole
+  //return moles
+  moles.forEach(mole => mole.addEventListener('click', whack)
+  );
   return moles;
 }
 
