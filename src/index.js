@@ -5,11 +5,11 @@ const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 
-let time = 10;
+let time = 30;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "hard";
+let difficulty = "easy";
 
 /**
  * Generates a random integer within a range.
@@ -224,8 +224,7 @@ function updateTimer() {
 function startTimer() {
   // TODO: Write your code here
   //implement a timer that updates in intervals of 1 second
-  timer = setInterval(updateTimer, 1000);
-  return timer;
+  return  setInterval(updateTimer, 1000);
 }
 
 /**
@@ -239,7 +238,7 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
-  updateScore('whack', event);
+  updateScore();
   return points;
 }
 
@@ -248,11 +247,12 @@ function whack(event) {
 * Adds the 'click' event listeners to the moles. See the instructions
 * for an example on how to set event listeners using a for loop.
 */
-function setEventListeners(){
+function setEventListeners(moles){
   // TODO: Write your code here
   //forEach mole add the whack event handler when a player clicks on the mole
   //return moles
-  moles.forEach(mole => mole.addEventListener('click', whack)
+  moles.forEach(
+    mole => mole.addEventListener('click', whack)
   );
   return moles;
 }
@@ -289,6 +289,7 @@ function stopGame(){
 function startGame(){
   setDuration(10);
   showUp();
+  startTimer();
   return "game started";
 }
 

@@ -42,7 +42,6 @@ h2 {
   grid-template-rows: repeat(3, 1fr);
   flex-wrap: wrap;
   margin: 0 auto;
-  /* cursor: url('./assets/mallet.png'), pointer; */
 }
 
 .hole {
@@ -82,3 +81,4 @@ h2 {
   top: 0;
   /*transform: scale(1.1);*/
 }
+
