@@ -5,11 +5,14 @@ const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 
+
 let time = 30;
 let timer;
 let lastHole = 0;
 let points = 0;
 let difficulty = "easy";
+
+
 
 /**
  * Generates a random integer within a range.
@@ -251,11 +254,10 @@ function setEventListeners(moles){
   // TODO: Write your code here
   //forEach mole add the whack event handler when a player clicks on the mole
   //return moles
-  moles.forEach(
-    mole => mole.addEventListener('click', whack)
-  );
+  moles.forEach(mole => mole.addEventListener('click', whack));
   return moles;
 }
+
 
 /**
 *
@@ -268,6 +270,45 @@ function setDuration(duration) {
   return time;
 }
 
+// //adding audio to the game for when a mole is hit and background music
+// const backgroundMusic = document.getElementById('backgroundMusic');
+// const buttons = document.getElementsByTagName('button');
+// const stopMusic = 0;
+
+// for (let i=0; i < buttons.length; i++) {
+//   buttons[i].onclick = function() {
+//     backgroundMusic.currentTime = this.getAttribute("data-start");
+//     stopMusic = this.getAttribute("data-stop");
+//     backgroundMusic.play();
+//   };
+// }
+
+// backgroundMusic.addEventListener('timeupdate', function(){
+//   if (this.currentTime > stopGame){
+//     this.pause();
+//   }
+// }, false);
+
+const audioHit = new Audio ('https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/hit.mp3?raw=true');
+const song = new Audio ("https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/molesong.mp3?raw=true");
+
+function playAudio(audioObject) {
+  audioObject.play();
+}
+
+function loopAudio(audioObject) {
+  audioObject.loop = true;
+  playAudio(audioObject);
+}
+
+function stopAudio(audioObject) {
+  audioObject.pause();
+}
+
+function play() {
+  playAudio(song);
+}
+
 /**
 *
 * This function is called when the game is stopped. It clears the
@@ -275,7 +316,8 @@ function setDuration(duration) {
 *
 */
 function stopGame(){
-  // stopAudio(song);  //optional
+  //background music stops when game ends
+  stopAudio(song);  //optional
   clearInterval(timer);
   return "game stopped";
 }
@@ -287,9 +329,13 @@ function stopGame(){
 *
 */
 function startGame(){
-  setDuration(10);
+  //adjusted seconds to change how long the game is
+  setDuration(30);
   showUp();
+  //added startTimer() for the timer to start when the game starts)
   startTimer();
+  //plays the background music while game plays
+  playAudio(song);
   return "game started";
 }
 
