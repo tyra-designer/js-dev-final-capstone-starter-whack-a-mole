@@ -1,6 +1,6 @@
 html {
   /*background: url('./assets/background.png') no-repeat center center fixed;*/
-  background: url('/assets/vecteezy_night-landscape-with-moonlight-over-the-hills-and-grass_35402224_921/vecteezy_night-landscape-with-moonlight-over-the-hills-and-grass_35402224-1.jpg') no-repeat center center fixed;
+  background: url('https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/vecteezy_night-landscape-with-moonlight-over-the-hills-and-grass_35402224_921/vecteezy_night-landscape-with-moonlight-over-the-hills-and-grass_35402224-1.jpg?raw=true') no-repeat center center fixed;
   box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -53,7 +53,7 @@ h2 {
 .hole:after {
   display: block;
   /*grass is dark to match the background*/
-  background: url("/assets/vecteezy_grass-silhouette-generative-ai_26912489.png") bottom center no-repeat;
+  background: url("https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/vecteezy_grass-silhouette-generative-ai_26912489.png?raw=true") bottom center no-repeat;
   background-size:contain;
   content:'';
   width: 100%;
@@ -66,7 +66,7 @@ h2 {
 
 .mole {
   /*changed the mole to a zombie to fit the theme*/
-  background:url('/assets/zombie.png') bottom center no-repeat;
+  background:url('https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/zombie.png?raw=true') bottom center no-repeat;
   background-size: 40%;
   position: absolute;
   top: 100%;
