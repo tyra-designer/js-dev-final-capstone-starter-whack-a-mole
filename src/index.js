@@ -11,8 +11,6 @@ const timerDisplay = document.querySelector('#timer'); // use querySelector() to
 const audioHit = new Audio ('https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/hit.mp3?raw=true');
 const song = new Audio ("https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/molesong.mp3?raw=true");
 
-//mkaing a querySelector for the cursor
-const cursor = document.querySelector('.cursor');
 
 let time = 25;
 let timer;
@@ -209,7 +207,7 @@ function updateScore() {
   //Update score.textContent with points
   //return points
   points+=1;
-  console.log("random ", points);
+  // console.log("random ", points); //used to test how to score was increasing
   score.textContent = points;
   return points;
 }

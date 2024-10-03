@@ -1,6 +1,6 @@
 html {
   /*background: url('./assets/background.png') no-repeat center center fixed;*/
-  background: url('/assets/vecteezy_graveyard/3079_REpWIE1BUiA0MDEtMjA.jpg') no-repeat center center fixed;
+  background: url('/assets/vecteezy_night-landscape-with-moonlight-over-the-hills-and-grass_35402224_921/vecteezy_night-landscape-with-moonlight-over-the-hills-and-grass_35402224-1.jpg') no-repeat center center fixed;
   box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -52,8 +52,8 @@ h2 {
 
 .hole:after {
   display: block;
-  /*background: url("./assets/hole.png") bottom center no-repeat;*/
-  background: url("https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/hole.png?raw=true") bottom center no-repeat;
+  /*grass is dark to match the background*/
+  background: url("/assets/vecteezy_grass-silhouette-generative-ai_26912489.png") bottom center no-repeat;
   background-size:contain;
   content:'';
   width: 100%;
@@ -65,8 +65,8 @@ h2 {
 }
 
 .mole {
-  /*background:url('./assets/mole.png') bottom center no-repeat;*/
-  background:url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mole.png?raw=true') bottom center no-repeat;
+  /*changed the mole to a zombie to fit the theme*/
+  background:url('/assets/zombie.png') bottom center no-repeat;
   background-size: 40%;
   position: absolute;
   top: 100%;
@@ -80,22 +80,4 @@ h2 {
 .hole.show .mole {
   top: 0;
   /*transform: scale(1.1);*/
-}
-
-/*changing the cursor image to fit the game, used pointer for cursor to respond to each whack*/
-.cursor {
-  height: 110px;
-  width: 100px;
-  /* top: 100px;
-  left: 100px; */
-  cursor: url('https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mallet.png?raw=true'), pointer;
-  /* background-size: 100% 100%;
-  transform: translate(-20%, -20%);
-  transition: transform .1s;
-  pointer-events: none; */
-  cursor: pointer;
-}
-
-.cursor .active{
-  transform: translate(-20%, -20%) rotate(-45deg);
 }
