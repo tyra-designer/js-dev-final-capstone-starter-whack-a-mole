@@ -12,14 +12,14 @@ html {
 
 h1 {
   text-align: center;
+  font-family: "Oswald", sans-serif;
   font-size: 90px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
   color: white;
-  -webkit-text-stroke: 2px black;
 }
 
 h2 {
   text-align: center;
+  font-family: "Oswald", sans-serif;
   font-size: 40px;
   color: white;
   -webkit-text-stroke: 1px black;
@@ -82,3 +82,20 @@ h2 {
   /*transform: scale(1.1);*/
 }
 
+/*changing the cursor image to fit the game, used pointer for cursor to respond to each whack*/
+.cursor {
+  height: 110px;
+  width: 100px;
+  /* top: 100px;
+  left: 100px; */
+  cursor: url('https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mallet.png?raw=true'), pointer;
+  /* background-size: 100% 100%;
+  transform: translate(-20%, -20%);
+  transition: transform .1s;
+  pointer-events: none; */
+  cursor: pointer;
+}
+
+.cursor .active{
+  transform: translate(-20%, -20%) rotate(-45deg);
+}

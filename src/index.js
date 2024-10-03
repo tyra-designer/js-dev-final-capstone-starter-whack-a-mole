@@ -5,14 +5,41 @@ const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 
+// //adding audio to the game for when a mole is hit and background music
+//made created and return a new audio element 
 
-let time = 30;
+const audioHit = new Audio ('https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/hit.mp3?raw=true');
+const song = new Audio ("https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/molesong.mp3?raw=true");
+
+//mkaing a querySelector for the cursor
+const cursor = document.querySelector('.cursor');
+
+let time = 25;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "easy";
+let difficulty = "normal";
 
 
+
+
+
+function playAudio(audioObject) {
+  audioObject.play();
+}
+
+function loopAudio(audioObject) {
+  audioObject.loop = true;
+  playAudio(audioObject);
+}
+
+function stopAudio(audioObject) {
+  audioObject.pause();
+}
+
+function play() {
+  playAudio(song);
+}
 
 /**
  * Generates a random integer within a range.
@@ -181,7 +208,8 @@ function updateScore() {
   //Increment the points global variable by 1 point
   //Update score.textContent with points
   //return points
-  points++;
+  points+=1;
+  console.log("random ", points);
   score.textContent = points;
   return points;
 }
@@ -202,6 +230,7 @@ function clearScore() {
   score.textContent = points;
   return points;
 }
+
 
 /**
 *
@@ -241,8 +270,10 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
-  updateScore();
-  return points;
+  //whack audio occurs when a mole is clicked
+ playAudio(audioHit);
+ return updateScore();
+ 
 }
 
 /**
@@ -250,7 +281,7 @@ function whack(event) {
 * Adds the 'click' event listeners to the moles. See the instructions
 * for an example on how to set event listeners using a for loop.
 */
-function setEventListeners(moles){
+function setEventListeners(){
   // TODO: Write your code here
   //forEach mole add the whack event handler when a player clicks on the mole
   //return moles
@@ -268,45 +299,6 @@ function setEventListeners(moles){
 function setDuration(duration) {
   time = duration;
   return time;
-}
-
-// //adding audio to the game for when a mole is hit and background music
-// const backgroundMusic = document.getElementById('backgroundMusic');
-// const buttons = document.getElementsByTagName('button');
-// const stopMusic = 0;
-
-// for (let i=0; i < buttons.length; i++) {
-//   buttons[i].onclick = function() {
-//     backgroundMusic.currentTime = this.getAttribute("data-start");
-//     stopMusic = this.getAttribute("data-stop");
-//     backgroundMusic.play();
-//   };
-// }
-
-// backgroundMusic.addEventListener('timeupdate', function(){
-//   if (this.currentTime > stopGame){
-//     this.pause();
-//   }
-// }, false);
-
-const audioHit = new Audio ('https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/hit.mp3?raw=true');
-const song = new Audio ("https://github.com/tyra-designer/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/molesong.mp3?raw=true");
-
-function playAudio(audioObject) {
-  audioObject.play();
-}
-
-function loopAudio(audioObject) {
-  audioObject.loop = true;
-  playAudio(audioObject);
-}
-
-function stopAudio(audioObject) {
-  audioObject.pause();
-}
-
-function play() {
-  playAudio(song);
 }
 
 /**
@@ -330,17 +322,17 @@ function stopGame(){
 */
 function startGame(){
   //adjusted seconds to change how long the game is
-  setDuration(30);
+  setDuration(25);
   showUp();
-  //added startTimer() for the timer to start when the game starts)
+  //added startTimer() for the timer to start when the game starts
   startTimer();
   //plays the background music while game plays
   playAudio(song);
+  setEventListeners();
   return "game started";
 }
 
 startButton.addEventListener("click", startGame);
-
 
 // Please do not modify the code below.
 // Used for testing purposes.
