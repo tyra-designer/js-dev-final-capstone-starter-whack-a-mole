@@ -276,9 +276,12 @@ describe("US-04 whack()", () => {
 
   it("should increment score when clicking on mole", async () => {
     const points = await page.evaluate(() => {
+      console.log("read score #1 ", document.querySelector("#score").innerHTML);
       window.startGame();
+      console.log("read score #2 ", document.querySelector("#score").innerHTML);
       const mole = document.querySelectorAll(".mole")[0];
       mole.click();
+      console.log("read score #3 ", document.querySelector("#score").innerHTML);
       const points = document.querySelector("#score").innerHTML;
       return points;
     });

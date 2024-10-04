@@ -207,7 +207,7 @@ function updateScore() {
   //Update score.textContent with points
   //return points
   points+=1;
-  // console.log("random ", points); //used to test how to score was increasing
+  console.log("random ", points); //used to test how to score was increasing
   score.textContent = points;
   return points;
 }
@@ -271,7 +271,6 @@ function whack(event) {
   //whack audio occurs when a mole is clicked
  playAudio(audioHit);
  return updateScore();
- 
 }
 
 /**
@@ -327,6 +326,7 @@ function startGame(){
   //plays the background music while game plays
   playAudio(song);
   setEventListeners();
+  clearScore();
   return "game started";
 }
 
